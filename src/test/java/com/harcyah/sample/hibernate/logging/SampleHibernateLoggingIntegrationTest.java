@@ -7,18 +7,18 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static com.harcyah.sample.hibernate.logging.Assertions.assertThat;
 
 @SpringBootTest
-public class SampleHibernateLoggingIntegrationTest {
+class SampleHibernateLoggingIntegrationTest {
 
     @Autowired
     private PostRepository postRepository;
 
     @Test
-    public void testRepositoriesAreDefined() {
+    void testRepositoriesAreDefined() {
         assertThat(postRepository.count()).isEqualTo(0L);
     }
 
     @Test
-    public void testFindCommentDetails() {
+    void testFindCommentDetails() {
         Post post0 = new Post();
         post0.setAuthor("Author0");
         post0.setTitle("Title0");
