@@ -74,27 +74,6 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>3.1.5</version>
-                <configuration>
-                    <mainClass>com.harcyah.sample.hibernate.logging.SampleHibernateLoggingApplication</mainClass>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <version>3.4.1</version>
@@ -145,46 +124,6 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.assertj</groupId>
-                <artifactId>assertj-assertions-generator-maven-plugin</artifactId>
-                <version>2.2.0</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.assertj</groupId>
-                        <artifactId>assertj-core</artifactId>
-                        <version>3.24.2</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.assertj</groupId>
-                        <artifactId>assertj-assertions-generator</artifactId>
-                        <version>2.2.1</version>
-                    </dependency>
-                </dependencies>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>generate-assertions</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <classes>
-                        <param>com.harcyah.sample.hibernate.logging.Post</param>
-                    </classes>
-                    <entryPointClassPackage>com.harcyah.sample.hibernate.logging</entryPointClassPackage>
-                    <templates>
-                        <templatesDirectory>src/test/templates/</templatesDirectory>
-                        <assertionsEntryPointClass>assertions_entry_point_template.txt</assertionsEntryPointClass>
-                    </templates>
-                    <hierarchical>true</hierarchical>
-                    <generateBddAssertions>false</generateBddAssertions>
-                    <generateJUnitSoftAssertions>true</generateJUnitSoftAssertions>
-                    <generateSoftAssertions>true</generateSoftAssertions>
-                    <targetDir>target/generated-test-sources/java/assertj</targetDir>
-                    <quiet>true</quiet>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -326,6 +265,67 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-install-plugin</artifactId>
                 <version>3.1.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.assertj</groupId>
+                <artifactId>assertj-assertions-generator-maven-plugin</artifactId>
+                <version>2.2.0</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.assertj</groupId>
+                        <artifactId>assertj-core</artifactId>
+                        <version>3.24.2</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.assertj</groupId>
+                        <artifactId>assertj-assertions-generator</artifactId>
+                        <version>2.2.1</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate-assertions</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <classes>
+                        <param>com.harcyah.sample.hibernate.logging.Post</param>
+                    </classes>
+                    <entryPointClassPackage>com.harcyah.sample.hibernate.logging</entryPointClassPackage>
+                    <templates>
+                        <templatesDirectory>src/test/templates/</templatesDirectory>
+                        <assertionsEntryPointClass>assertions_entry_point_template.txt</assertionsEntryPointClass>
+                    </templates>
+                    <hierarchical>true</hierarchical>
+                    <generateBddAssertions>false</generateBddAssertions>
+                    <generateJUnitSoftAssertions>true</generateJUnitSoftAssertions>
+                    <generateSoftAssertions>true</generateSoftAssertions>
+                    <targetDir>target/generated-test-sources/java/assertj</targetDir>
+                    <quiet>true</quiet>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>3.1.5</version>
+                <configuration>
+                    <mainClass>com.harcyah.sample.hibernate.logging.SampleHibernateLoggingApplication</mainClass>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
