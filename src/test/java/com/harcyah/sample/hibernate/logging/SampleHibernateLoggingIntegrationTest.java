@@ -14,7 +14,7 @@ class SampleHibernateLoggingIntegrationTest {
 
     @Test
     void testRepositoriesAreDefined() {
-        assertThat(postRepository.count()).isEqualTo(0L);
+        assertThat(postRepository.count()).isZero();
     }
 
     @Test
