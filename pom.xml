@@ -89,7 +89,7 @@
                     <rules>
                         <banDuplicatePomDependencyVersions/>
                         <requireMavenVersion>
-                            <version>3.9.10</version>
+                            <version>3.9.11</version>
                         </requireMavenVersion>
                         <requirePluginVersions/>
                         <requireReleaseDeps/>
